@@ -43,7 +43,7 @@ def hello():
         text = "Tối rồi anh nhớ nghỉ ngơi sớm! đừng làm việc khuya quá ! nhớ em thì ngủ sẽ mơ thấy em mà !! nên ngủ nhen !! thương anh !"
         speak(text)
     if hour > 23 and hour < 5:
-        text = "Anh không ngủ được à ! thức khuya chơi game là em giận đó nhen ! còn nhớ em quá thì ngủ đi để mơ thấy em nhen ! thương anh lắm luôn đó !!"
+        text = "Cục cưng không ngủ được à ! thức khuya chơi game là em giận đó nhen ! còn nhớ em quá thì ngủ đi để mơ thấy em nhen ! thương anh lắm luôn đó !!"
         speak(text)
     speak("Anh cần em giúp gì nè !")
 
@@ -56,13 +56,14 @@ def time(cmd):
         text = f"Anh yêu hôm này là ngày {today.day} tháng {today.month} năm {today.year}"
     speak(text)
 
+def brain(text):
+    if 'mấy giờ' in text or 'ngày mấy' in test:
+        time(text)
+
 def main():
     hello()
     text = listen().lower()
-    print(text)
-    if "mấy giờ" in text or "ngày mấy" in text:
-        time(text)
-
+    brain(text)
 
 
 if __name__ == "__main__":
